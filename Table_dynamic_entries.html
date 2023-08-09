@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        #table1 {
+
+            /* background-color: antiquewhite; */
+            border-spacing: 0px;
+            width: 50%;
+            height: 50%;
+            margin-top: 100px;
+            text-align: center;
+            margin-left: 25%;
+
+        }
+
+        tr,
+        th,
+        td {
+            border: 2px solid black;
+            text-align: center;
+            
+        }
+
+        th {
+            background-color: aquamarine;
+
+        }
+
+
+        tr {
+
+            background-color: antiquewhite;
+            font-size: large;
+        }
+
+        .I1 {
+            border: solid;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+            font-size: large;
+            margin-left: 35%;
+        }
+
+        #b1 {
+            margin-left: 47%;
+            display: inline-block;
+            font-size: 20px;
+            background-color: bisque;
+        }
+    </style>
+    <script>
+        function create() {
+            //obtain textbox from HTML
+            let ob1 = document.getElementById('t1')
+            let ob2 = document.getElementById('t2')
+            let ob3 = document.getElementById('t3')
+
+            let a = ob1.value
+            let b = ob2.value
+            let c = ob3.value
+
+            //obtain table reference
+            let mytable = document.getElementById("table1")
+            //create row
+            let row = document.createElement('tr')
+            let c1 = document.createElement('td')
+            let c2 = document.createElement('td')
+            let c3 = document.createElement('td')
+
+            c1.innerText = a
+            c2.innerText = b
+            c3.innerText = c
+
+            //add column to row
+
+            row.append(c1)
+            row.append(c2)
+            row.append(c3)
+
+            //add row to table
+
+            mytable.append(row)
+
+        }
+    </script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">DYNAMIC ENTRIES IN THE TABLE</h1>
+    <label>ID</label>
+    <input class="I1" type="text" id="t1" value=" "><br>
+    <br>
+
+    <label>NAME</label>
+    <input class="I1" type="text" id="t2" value=" "><br>
+    <br>
+
+    <label>ADDRESS</label>
+    <input class="I1" type="text" id="t3" value=" "><br>
+    <br>
+
+    <br>
+    <br>
+
+    <input id="b1" type="button" value="Click Here" onclick="create()">
+
+    <br>
+    <br>
+
+
+    <table border="2" id="table1">
+
+        <thead id="thead1">
+            <th>ID</th>
+            <th>NAME</th>
+            <th>ADDRESS</th>
+        </thead>
+
+    </table>
+</body>
+
+</html>
